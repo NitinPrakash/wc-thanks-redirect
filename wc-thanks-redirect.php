@@ -61,11 +61,11 @@ function wc_thanks_redirect_settings( $settings, $current_section ) {
 	 * Check the current section is what we want
 	 **/
 	if ( $current_section == 'wctr' ) {
-		$settings_slider = array();
+		$settings_url = array();
 		// Add Title to the Settings
-		$settings_slider[] = array( 'name' => __( 'WC Thanks Redirect Settings', 'wc_thanks_redirect' ), 'type' => 'title', 'desc' => __( 'The following options are used to configure WC Thanks Redirect', 'wc_thanks_redirect' ), 'id' => 'wctr' );
+		$settings_url[] = array( 'name' => __( 'WC Thanks Redirect Settings', 'wc_thanks_redirect' ), 'type' => 'title', 'desc' => __( 'The following options are used to configure WC Thanks Redirect', 'wc_thanks_redirect' ), 'id' => 'wctr' );
 		// Add first checkbox option
-		$settings_slider[] = array(
+		$settings_url[] = array(
 			'name'     => __( 'Auto-insert into single product page', 'wc_thanks_redirect' ),
 			'desc_tip' => __( 'This will automatically insert your slider into the single product page', 'wc_thanks_redirect' ),
 			'id'       => 'wctr_global',
@@ -74,7 +74,7 @@ function wc_thanks_redirect_settings( $settings, $current_section ) {
 			'desc'     => __( 'Enable Global Redirect', 'wc_thanks_redirect' ),
 		);
 		// Add second text field option
-		$settings_slider[] = array(
+		$settings_url[] = array(
 			'name'     => __( 'Redirect URL', 'wc_thanks_redirect' ),
 			'desc_tip' => __( 'This will add a redirect URL for products', 'wc_thanks_redirect' ),
 			'id'       => 'wctr_redirect_url',
@@ -82,8 +82,8 @@ function wc_thanks_redirect_settings( $settings, $current_section ) {
 			'desc'     => __( 'Enter Valid URL!', 'wc_thanks_redirect' ),
 		);
 		
-		$settings_slider[] = array( 'type' => 'sectionend', 'id' => 'wctr' );
-		return $settings_slider;
+		$$settings_url[] = array( 'type' => 'sectionend', 'id' => 'wctr' );
+		return $settings_url;
 	
 	/**
 	 * If not, return the standard settings
