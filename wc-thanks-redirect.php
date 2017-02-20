@@ -63,7 +63,7 @@ function wc_thanks_redirect_settings( $settings, $current_section ) {
 	if ( $current_section == 'wctr' ) {
 		$settings_url = array();
 		// Add Title to the Settings
-		$settings_url[] = array( 'name' => __( 'WC Thanks Redirect Settings', 'wc_thanks_redirect' ), 'type' => 'title', 'desc' => __( 'The following options are used to configure WC Thanks Redirect', 'wc_thanks_redirect' ), 'id' => 'wctr' );
+		$settings_url[] = array( 'name' => __( 'Thanks Redirect Settings', 'wc_thanks_redirect' ), 'type' => 'title', 'desc' => __( 'The following options are used to configure WC Thanks Redirect', 'wc_thanks_redirect' ), 'id' => 'wctr' );
 		// Add first checkbox option
 		$settings_url[] = array(
 			'name'     => __( 'Global Redirect Settings', 'wc_thanks_redirect' ),
