@@ -66,8 +66,8 @@ function wc_thanks_redirect_settings( $settings, $current_section ) {
 		$settings_url[] = array( 'name' => __( 'WC Thanks Redirect Settings', 'wc_thanks_redirect' ), 'type' => 'title', 'desc' => __( 'The following options are used to configure WC Thanks Redirect', 'wc_thanks_redirect' ), 'id' => 'wctr' );
 		// Add first checkbox option
 		$settings_url[] = array(
-			'name'     => __( 'Auto-insert into single product page', 'wc_thanks_redirect' ),
-			'desc_tip' => __( 'This will automatically insert your slider into the single product page', 'wc_thanks_redirect' ),
+			'name'     => __( 'Global Redirect Settings', 'wc_thanks_redirect' ),
+			'desc_tip' => __( 'This will add redirect for successful orders', 'wc_thanks_redirect' ),
 			'id'       => 'wctr_global',
 			'type'     => 'checkbox',
 			'css'      => 'min-width:300px;',
@@ -75,14 +75,22 @@ function wc_thanks_redirect_settings( $settings, $current_section ) {
 		);
 		// Add second text field option
 		$settings_url[] = array(
-			'name'     => __( 'Redirect URL', 'wc_thanks_redirect' ),
-			'desc_tip' => __( 'This will add a redirect URL for products', 'wc_thanks_redirect' ),
-			'id'       => 'wctr_redirect_url',
+			'name'     => __( 'Thanks Redirect URL', 'wc_thanks_redirect' ),
+			'desc_tip' => __( 'This will add a redirect URL for successful orders', 'wc_thanks_redirect' ),
+			'id'       => 'wctr_thanks_redirect_url',
+			'type'     => 'text',
+			'desc'     => __( 'Enter Valid URL!', 'wc_thanks_redirect' ),
+		);
+                
+                $settings_url[] = array(
+			'name'     => __( 'Order Failure Redirect URL', 'wc_thanks_redirect' ),
+			'desc_tip' => __( 'This will add a redirect URL for failed orders', 'wc_thanks_redirect' ),
+			'id'       => 'wctr_failed_redirect_url',
 			'type'     => 'text',
 			'desc'     => __( 'Enter Valid URL!', 'wc_thanks_redirect' ),
 		);
 		
-		$$settings_url[] = array( 'type' => 'sectionend', 'id' => 'wctr' );
+		$settings_url[] = array( 'type' => 'sectionend', 'id' => 'wctr' );
 		return $settings_url;
 	
 	/**
