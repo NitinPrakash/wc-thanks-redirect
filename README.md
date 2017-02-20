@@ -1,1 +1,3 @@
-# WC-Thanks-Redirect
+# WC Thanks Redirect
+
+Coming Soon
