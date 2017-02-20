@@ -67,7 +67,7 @@ function wc_thanks_redirect_settings( $settings, $current_section ) {
 		// Add first checkbox option
 		$settings_url[] = array(
 			'name'     => __( 'Global Redirect Settings', 'wc_thanks_redirect' ),
-			'desc_tip' => __( 'This will add redirect for successful orders', 'wc_thanks_redirect' ),
+			'desc_tip' => __( 'This will add redirect for orders', 'wc_thanks_redirect' ),
 			'id'       => 'wctr_global',
 			'type'     => 'checkbox',
 			'css'      => 'min-width:300px;',
