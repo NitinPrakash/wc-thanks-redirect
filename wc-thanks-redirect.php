@@ -24,12 +24,6 @@ defined( 'ABSPATH' ) || die( 'Wordpress Error! Opening plugin file directly' );
 /**
  * Check if WooCommerce is active
  **/
-if ( !class_exists( 'WooCommerce' ) ) {
-   // wp_die('Not Exists');
-    //add_action( 'admin_notices', 'install_admin_notice' );
-} else{
-   // wp_die('Exists');
-}
 
 if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
     add_action( 'admin_notices', 'install_admin_notice' );
@@ -56,6 +50,7 @@ function wc_thanks_redirect_add_section( $sections ) {
  * Add settings to the specific section we created before
  */
 add_filter( 'woocommerce_get_settings_products', 'wc_thanks_redirect_settings', 10, 2 );
+
 function wc_thanks_redirect_settings( $settings, $current_section ) {
 	/**
 	 * Check the current section is what we want
@@ -100,5 +95,28 @@ function wc_thanks_redirect_settings( $settings, $current_section ) {
 		return $settings;
 	}
 }
+
+/**
+ * action Redirect to thank you
+ */
+add_action( 'woocommerce_thankyou', function( $order_id ){
+    
+    $wctr_global = get_option( 'wctr_global' );
+    if( isset( $wctr_global ) && strtolower($wctr_global) == 'yes'   ) {    
+    
+        $thanks_url = get_option( 'wctr_thanks_redirect_url');
+        $fail_url = get_option( 'wctr_failed_redirect_url');
+
+        $order = new WC_Order( $order_id );
+
+        if ( $order->status != 'failed' ) { 
+            echo "<script type=\"text/javascript\">window.location = '".$thanks_url."'</script>";
+        }else{
+            echo "<script type=\"text/javascript\">window.location = '".$fail_url."'</script>";
+        }
+    
+    }    
+    
+});
 
 
