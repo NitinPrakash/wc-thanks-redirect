@@ -1,1 +1,1 @@
-<?php // Silence is golden
+<?php // quieter you become more you are abe to hear
