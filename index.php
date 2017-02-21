@@ -1,1 +1,1 @@
-<?php // quieter you become more you are abe to hear
+<?php // quieter you become more you are able to hear
