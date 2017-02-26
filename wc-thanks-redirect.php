@@ -8,7 +8,7 @@
  * @wordpress-plugin
  * Plugin Name:       WC Thanks Redirect
  * Plugin URI:        http://www.webcurries.com/plugins/wc-thanks-redirect
- * Description:       WC Thanks Redirect allows to add redirect settings for WooCommerce Products
+ * Description:       WC Thanks Redirect allows to add redirect URL for WooCommerce Products for your Customers.
  * Version:           1.0.0
  * Author:            Nitin Prakash
  * Author URI:        http://www.webcurries.com
@@ -41,7 +41,7 @@ function install_admin_notice(){
 add_filter( 'woocommerce_get_sections_products', 'wc_thanks_redirect_add_section' );
 function wc_thanks_redirect_add_section( $sections ) {
 	
-	$sections['wctr'] = __( 'WC Thanks Redirect Settings', 'wc_thanks_redirect' );
+	$sections['wctr'] = __( 'WC Thanks Redirect', 'wc_thanks_redirect' );
 	return $sections;
 	
 }
