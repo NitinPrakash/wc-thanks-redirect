@@ -12,7 +12,7 @@ WC Thanks Redirect allows to add redirect URL for WooCommerce Products for your 
 
 == Description ==
 
-This free WooCommerce extension permits you to define GLobal Thank You page for your Customers based on Success or Failure.
+This free WooCommerce extension permits you to define Global Thank You page for your Customers based on Success or Failure.
 
 This permits you to make your own Thank you message, particular to your store and to your objective.
 
