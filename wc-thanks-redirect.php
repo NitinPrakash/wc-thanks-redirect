@@ -21,13 +21,16 @@
 // Exit if accessed directly
 defined( 'ABSPATH' ) || die( 'Wordpress Error! Opening plugin file directly' );
 
+define( 'PLUGIN_PATH', plugins_url( __FILE__ ) ); 
+
+
 /**
  * Check if WooCommerce is active
  **/
 
 if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
     
-    add_action( 'admin_notices', 'install_admin_notice' );
+    add_action( 'admin_notices', 'wc_thanks_redirect_install_admin_notice' );
     
 }else{
     
@@ -44,7 +47,7 @@ if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', 
    }
 
    /**
-    * Add settings to the specific section we created before
+    * Add settings to the specific section created before
     */
    
    add_filter( 'woocommerce_get_settings_products', 'wc_thanks_redirect_settings', 10, 2 );
@@ -52,7 +55,7 @@ if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', 
    function wc_thanks_redirect_settings( $settings, $current_section ) {
        
            /**
-            * Check the current section is what we want
+            * Check the current section 
             **/
        
            if ( $current_section == 'wctr' ) {
@@ -135,7 +138,7 @@ if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', 
 
 /* Admin notice if WooCommerce is not installed or active */
 
-function install_admin_notice(){
+function wc_thanks_redirect_install_admin_notice(){
     echo '<div class="notice notice-error">';
     echo     '<p>'. _e( 'WC Thanks Redirect requires active WooCommerce Installation!', 'wc_thanks_redirect' ).'</p>';
     echo '</div>';
