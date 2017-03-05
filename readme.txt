@@ -18,6 +18,8 @@ This permits you to make your own Thank you message, particular to your store an
 
 After a purchase, your customers will be redirected to the custom Thank You page rather than the default WooCommerce's Thank You page.
 
+Feature to add Thanks you redirects per product COMING VERY SOON in next update.
+
 == Installation ==
 
 * Upload the directory '/wc-thanks-redirect/' to your WP plugins directory and activate from the Dashboard of the main blog.
