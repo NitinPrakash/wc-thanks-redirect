@@ -1,7 +1,7 @@
 === WC Thanks Redirect ===
 Contributors: nitin247
 Donate link: http://www.webcurries.com/plugin/wc-thanks-redirect/
-Tags: Wordpress, WooCommerce
+Tags: Wordpress, WooCommerce, e-Commerce
 Requires at least: 3.0.1
 Tested up to: 3.4
 Stable tag: 4.3
