@@ -1,21 +1,21 @@
 <?php
 /**
  *
- * @link              http://www.webcurries.com
+ * @link              http://www.webcurries.com/plugin/wc-thanks-redirect/
  * @since             1.0.0
- * @package           Wc_Thanks_Redirect
+ * @package           WC_Thanks_Redirect
  *
  * @wordpress-plugin
  * Plugin Name:       WC Thanks Redirect
- * Plugin URI:        https://wordpress.org/plugins/wc-thanks-redirect/
- * Description:       WC Thanks Redirect allows to add redirect URL for WooCommerce Products for your Customers.
+ * Plugin URI:        http://www.webcurries.com/plugin/wc-thanks-redirect/
+ * Description:       WC Thanks Redirect allows adding redirect URL for WooCommerce Products for your Customers.
  * Version:           1.0.0
  * Author:            Nitin Prakash
- * Author URI:        http://www.webcurries.com
+ * Author URI:        https://github.com/nitinprakash/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wc_thanks_redirect
- * Domain Path:       /languages
+ * Domain Path:       /languages/
  */
 
 // Exit if accessed directly
