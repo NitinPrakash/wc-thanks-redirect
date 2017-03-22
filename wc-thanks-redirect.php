@@ -2,7 +2,7 @@
 /**
  *
  * @link              http://www.webcurries.com/plugin/wc-thanks-redirect/
- * @since             1.0.0
+ * @since             1.1
  * @package           WC_Thanks_Redirect
  *
  * @wordpress-plugin
@@ -132,6 +132,47 @@ if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', 
        }    
 
    });
+   
+   // add the settings under ‘General’ sub-menu
+   add_action( 'woocommerce_product_options_general_product_data', 'wc_thanks_redirect_add_custom_settings' );
+   
+   function wc_thanks_redirect_add_custom_settings() {
+    global $woocommerce, $post;
+    echo '<div class="options_group">';
+    
+    // Create a checkbox for product purchase status
+      woocommerce_wp_checkbox(
+       array(
+       'id'            => 'wc_thanks_redirect_override',
+       'label'         => __('Use Custom ThankYou', 'wc_thanks_redirect' ),
+       'desc_tip'    => 'true',
+       'description'       => __( 'Override Global redirect settings and use Custom Settings', 'wc_thanks_redirect' ),    
+       ));
+
+    // Create a text field, for Custom Thank You
+    woocommerce_wp_text_input(
+      array(
+       'id'                => 'wc_thanks_redirect_custom_thankyou',
+       'label'             => __( 'Thank You URL', 'wc_thanks_redirect' ),
+       'placeholder'       => '',
+       'desc_tip'    => 'true',
+       'description'       => __( 'Enter Valid URL.', 'wc_thanks_redirect' ),
+       'type'              => 'text'
+       ));
+    
+    // Create a text field, for Custom Thank You
+    woocommerce_wp_text_input(
+      array(
+       'id'                => 'wc_thanks_redirect_custom_failure',
+       'label'             => __( 'Failure Redirect', 'wc_thanks_redirect' ),
+       'placeholder'       => '',
+       'desc_tip'    => 'true',
+       'description'       => __( 'Enter Valid URL.', 'wc_thanks_redirect' ),
+       'type'              => 'text'
+       ));
+
+      echo '</div>';
+    }
     
     
 }
