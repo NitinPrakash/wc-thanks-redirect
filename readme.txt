@@ -3,8 +3,8 @@ Contributors: nitin247
 Donate link: http://www.webcurries.com/plugin/wc-thanks-redirect/
 Tags: Wordpress, WooCommerce, e-Commerce
 Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 4.3
+Tested up to: 4.7.4
+Stable tag: 4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,6 +20,8 @@ After a purchase, your customers will be redirected to the custom Thank You page
 
 Feature to add Thanks you redirects per product COMING VERY SOON in next update.
 
+You may track progress of this plugin on github <a href="https://github.com/NitinPrakash/wc-thanks-redirect">WC Thanks Redirect</a> 
+
 == Installation ==
 
 * Upload the directory '/wc-thanks-redirect/' to your WP plugins directory and activate from the Dashboard of the main blog.
@@ -34,4 +36,3 @@ Feature to add Thanks you redirects per product COMING VERY SOON in next update.
 
 ** V 1.0 **
 Stable initial release
-
