@@ -141,13 +141,17 @@ if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', 
     echo '<div class="options_group">';
     
     // Create a checkbox for product purchase status
-      woocommerce_wp_checkbox(
+    /*  
+     * woocommerce_wp_checkbox(
+     
        array(
        'id'            => 'wc_thanks_redirect_override',
        'label'         => __('Use Custom ThankYou', 'wc_thanks_redirect' ),
        'desc_tip'    => 'true',
        'description'       => __( 'Override Global redirect settings and use Custom Settings', 'wc_thanks_redirect' ),    
        ));
+     * 
+     */
 
     // Create a text field, for Custom Thank You
     woocommerce_wp_text_input(
@@ -174,6 +178,21 @@ if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', 
       echo '</div>';
     }
     
+    add_action( 'woocommerce_process_product_meta', 'wc_thanks_redirect_save_custom_settings' );
+    
+    function wc_thanks_redirect_save_custom_settings( $post_id ){
+    
+    // save custom fields
+    $wc_thanks_redirect_custom_thankyou = $_POST['wc_thanks_redirect_custom_thankyou'];
+    $wc_thanks_redirect_custom_failure = $_POST['wc_thanks_redirect_custom_failure'];
+    
+    if( !empty( $wc_thanks_redirect_custom_thankyou ) )
+        update_post_meta( $post_id, 'wc_thanks_redirect_custom_thankyou', esc_attr( $wc_thanks_redirect_custom_thankyou) );   
+    
+    if( !empty( $wc_thanks_redirect_custom_failure ) )
+        update_post_meta( $post_id, 'wc_thanks_redirect_custom_failure', esc_attr( $wc_thanks_redirect_custom_failure) ); 
+    
+    }
     
 }
 
