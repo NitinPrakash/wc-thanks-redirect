@@ -115,22 +115,63 @@ if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', 
    
    add_action( 'woocommerce_thankyou', function( $order_id ){
 
-       $wctr_global = get_option( 'wctr_global' );
+       $wctr_global = get_option( 'wctr_global' );   
+       
+       $order = new WC_Order( $order_id ); 
+       
+       $order_status = $order->get_status();        
+       
+      // echo '<pre>';print_r($product_id);echo '</pre>';
+       
        if( isset( $wctr_global ) && strtolower($wctr_global) == 'yes'   ) {    
-
+           
+           
+           
            $thanks_url = get_option( 'wctr_thanks_redirect_url');
-           $fail_url = get_option( 'wctr_failed_redirect_url');
+           $fail_url = get_option( 'wctr_failed_redirect_url');          
 
-           $order = new WC_Order( $order_id );
-
-           if ( $order->status != 'failed' ) { 
-               echo "<script type=\"text/javascript\">window.location = '".$thanks_url."'</script>";
+           if ( $order_status != 'failed' ) {
+               // Check If URL is valid
+               if( filter_var($thanks_url, FILTER_VALIDATE_URL) ){
+                   echo "<script type=\"text/javascript\">window.location = '".$thanks_url."'</script>";
+               }
+               
            }else{
-               echo "<script type=\"text/javascript\">window.location = '".$fail_url."'</script>";
+               // Check If URL is valid
+               if( filter_var($fail_url, FILTER_VALIDATE_URL) ){
+                   echo "<script type=\"text/javascript\">window.location = '".$fail_url."'</script>";
+               }
            }
 
-       }    
+       } else{         
+           
+           $items = $order->get_items();       
 
+           foreach($items as $key => $this_product){
+                 $product_id = $this_product['product_id'];
+                 continue;
+           }                      
+           
+           $product_thanks = get_post_meta($product_id,'wc_thanks_redirect_custom_thankyou',true);
+
+           $product_failed = get_post_meta($product_id,'wc_thanks_redirect_custom_failure',true);
+           
+           if ( $order_status != 'failed' ) {
+               // Check If URL is valid
+               if( filter_var($product_thanks, FILTER_VALIDATE_URL) ){
+                   echo "<script type=\"text/javascript\">window.location = '".$product_thanks."'</script>";
+               }
+               
+           }else{
+               // Check If URL is valid
+               if( filter_var($product_failed, FILTER_VALIDATE_URL) ){
+                   echo "<script type=\"text/javascript\">window.location = '".$product_failed."'</script>";
+               }
+               
+           }
+           
+       }   
+      
    });
    
    // add the settings under ‘General’ sub-menu
