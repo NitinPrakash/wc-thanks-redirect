@@ -18,7 +18,7 @@ This permits you to make your own Thank you message, particular to your store an
 
 After a purchase, your customers will be redirected to the custom Thank You page rather than the default WooCommerce's Thank You page.
 
-Feature to add Thanks you redirects per product COMING VERY SOON in next update.
+For WC Thanks Redirect version 2, you can set per product redirect urls .
 
 You may track progress of this plugin on github <a href="https://github.com/NitinPrakash/wc-thanks-redirect">WC Thanks Redirect</a> 
 
@@ -30,9 +30,18 @@ You may track progress of this plugin on github <a href="https://github.com/Niti
 
 
 == Frequently Asked Questions ==
- None at this time
+ 
+= How Global Redirects work? =
+Navigate to Dashboard > WooCommerce > Products > WC Thanks Redirect
+Here you can setup URLs for Global Redirect. If Global Redirect is active per product urls will not work.
+
+= How to set redirects per product ? =
+Navigate to Edit your desired product, in General Tab you can set per product redirect.
+( Note per product will work only if Global Redirects are inactive )
 
 == Changelog ==
 
 ** V 1.0 **
 Stable initial release
+** V 2.0 **
+Plugin updated for per product redirect urls.
