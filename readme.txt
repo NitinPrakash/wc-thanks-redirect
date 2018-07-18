@@ -1,9 +1,9 @@
 === WC Thanks Redirect ===
 Contributors: nitin247
 Donate link: http://www.webcurries.com/plugin/wc-thanks-redirect/
-Tags: Wordpress, WooCommerce, e-Commerce
+Tags: Wordpress, WooCommerce, e-Commerce, thanks redirect, thank you redirect, thank you page, WooCommerce Thanks Redirect, WooCommerce Thank You
 Requires at least: 3.0.1
-Tested up to: 4.9.2
+Tested up to: 4.9.7
 Stable tag: 4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -45,3 +45,5 @@ Navigate to Edit your desired product, in General Tab you can set per product re
 Stable initial release
 ** V 2.0 **
 Plugin updated for per product redirect urls.
+** V 2.1 **
+Fixed issue with plugin stopped working suddenly.

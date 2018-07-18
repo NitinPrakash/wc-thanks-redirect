@@ -9,7 +9,7 @@
  * Plugin Name:       WC Thanks Redirect
  * Plugin URI:        http://www.webcurries.com/plugin/wc-thanks-redirect/
  * Description:       WC Thanks Redirect allows adding redirect URL for WooCommerce Products for your Customers.
- * Version:           2.0
+ * Version:           2.1
  * Author:            Nitin Prakash
  * Author URI:        https://github.com/nitinprakash/
  * License:           GPL-2.0+
