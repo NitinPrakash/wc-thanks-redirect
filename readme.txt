@@ -1,9 +1,11 @@
 === WC Thanks Redirect ===
 Contributors: nitin247
+Author URI: http://www.nitin247.com/
+Author: Nitin Prakash
 Donate link: http://www.webcurries.com/plugin/wc-thanks-redirect/
 Tags: Wordpress, WooCommerce, e-Commerce, thanks redirect, thank you redirect, thank you page, WooCommerce Thanks Redirect, WooCommerce Thank You
 Requires at least: 3.0.1
-Tested up to: 4.9.7
+Tested up to: 4.9.8
 Stable tag: 4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,14 +27,14 @@ You may track progress of this plugin on github <a href="https://github.com/Niti
 == Installation ==
 
 * Upload the directory '/wc-thanks-redirect/' to your WP plugins directory and activate from the Dashboard of the main blog.
-* Configure the plugin at Dashboard > WooCommerce > Products > WC Thanks Redirect.
+* Configure the plugin at Dashboard > WooCommerce > Settings > Products > WC Thanks Redirect.
 * Presently you can set Global Custom redirect URLs for your customers based on Success or Failure.
 
 
 == Frequently Asked Questions ==
  
 = How Global Redirects work? =
-Navigate to Dashboard > WooCommerce > Products > WC Thanks Redirect
+Navigate to Dashboard > WooCommerce > Settings > Products > WC Thanks Redirect
 Here you can setup URLs for Global Redirect. If Global Redirect is active per product urls will not work.
 
 = How to set redirects per product ? =

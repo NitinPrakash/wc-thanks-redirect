@@ -11,7 +11,7 @@
  * Description:       WC Thanks Redirect allows adding redirect URL for WooCommerce Products for your Customers.
  * Version:           2.1
  * Author:            Nitin Prakash
- * Author URI:        https://github.com/nitinprakash/
+ * Author URI:        http://www.nitin247.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wc_thanks_redirect
