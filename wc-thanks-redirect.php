@@ -9,7 +9,7 @@
  * Plugin Name:       WC Thanks Redirect
  * Plugin URI:        http://www.webcurries.com/plugin/wc-thanks-redirect/
  * Description:       WC Thanks Redirect allows adding redirect URL for WooCommerce Products for your Customers.
- * Version:           2.1
+ * Version:           2.2
  * Author:            Nitin Prakash
  * Author URI:        http://www.nitin247.com/
  * License:           GPL-2.0+
@@ -22,7 +22,6 @@
 defined( 'ABSPATH' ) || die( 'Wordpress Error! Opening plugin file directly' );
 
 define( 'PLUGIN_PATH', plugins_url( __FILE__ ) ); 
-
 
 /**
  * Check if WooCommerce is active
@@ -119,13 +118,9 @@ if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', 
        
        $order = new WC_Order( $order_id ); 
        
-       $order_status = $order->get_status();        
+       $order_status = $order->get_status();                     
        
-      // echo '<pre>';print_r($product_id);echo '</pre>';
-       
-       if( isset( $wctr_global ) && strtolower($wctr_global) == 'yes'   ) {    
-           
-           
+       if( isset( $wctr_global ) && strtolower($wctr_global) == 'yes'   ) {                          
            
            $thanks_url = get_option( 'wctr_thanks_redirect_url');
            $fail_url = get_option( 'wctr_failed_redirect_url');          
@@ -133,13 +128,17 @@ if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', 
            if ( $order_status != 'failed' ) {
                // Check If URL is valid
                if( filter_var($thanks_url, FILTER_VALIDATE_URL) ){
-                   echo "<script type=\"text/javascript\">window.location = '".$thanks_url."'</script>";
+                   wp_redirect( $thanks_url );
+                   exit;
+                   //echo "<script type=\"text/javascript\">window.location = '".$thanks_url."'</script>";
                }
                
            }else{
                // Check If URL is valid
                if( filter_var($fail_url, FILTER_VALIDATE_URL) ){
-                   echo "<script type=\"text/javascript\">window.location = '".$fail_url."'</script>";
+                   wp_redirect( $fail_url );
+                   exit;
+                   //echo "<script type=\"text/javascript\">window.location = '".$fail_url."'</script>";
                }
            }
 
@@ -159,13 +158,17 @@ if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', 
            if ( $order_status != 'failed' ) {
                // Check If URL is valid
                if( filter_var($product_thanks, FILTER_VALIDATE_URL) ){
-                   echo "<script type=\"text/javascript\">window.location = '".$product_thanks."'</script>";
+                   wp_redirect( $product_thanks );
+                   exit;
+                   //echo "<script type=\"text/javascript\">window.location = '".$product_thanks."'</script>";
                }
                
            }else{
                // Check If URL is valid
                if( filter_var($product_failed, FILTER_VALIDATE_URL) ){
-                   echo "<script type=\"text/javascript\">window.location = '".$product_failed."'</script>";
+                   wp_redirect( $product_failed );
+                   exit;
+                   //echo "<script type=\"text/javascript\">window.location = '".$product_failed."'</script>";
                }
                
            }

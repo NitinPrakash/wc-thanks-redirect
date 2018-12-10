@@ -3,10 +3,11 @@ Contributors: nitin247
 Author URI: http://www.nitin247.com/
 Author: Nitin Prakash
 Donate link: http://www.webcurries.com/plugin/wc-thanks-redirect/
-Tags: Wordpress, WooCommerce, e-Commerce, thanks redirect, thank you redirect, thank you page, WooCommerce Thanks Redirect, WooCommerce Thank You
+Tags: thanks redirect, thank you redirect, thank you page, WooCommerce Thanks Redirect, WooCommerce Thank You, Wordpress, WooCommerce, e-Commerce
 Requires at least: 3.0.1
-Tested up to: 4.9.8
+Tested up to: 5.0
 Stable tag: 4.7
+Version: 2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,3 +50,5 @@ Stable initial release
 Plugin updated for per product redirect urls.
 ** V 2.1 **
 Fixed issue with plugin stopped working suddenly.
+** V 2.2 **
+Fixed issue with plugin double redirect.
