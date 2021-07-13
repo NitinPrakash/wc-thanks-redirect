@@ -58,7 +58,7 @@ Check PRO Version for Wordpress Multisite here <a href="https://bit.ly/2RxRkT5">
 - German Translation by <a target="_blank" href="https://wordpress.org/support/users/danielglaas/">Daniel Glass</a>
 
 
-**Want To Contribute To The Plugin?**
+**Want to contribute to the plugin?**
 
 You may now contribute to the plugin on Github <a target="_blank" href="https://github.com/NitinPrakash/wc-thanks-redirect">WC Thanks Redirect</a>
 
