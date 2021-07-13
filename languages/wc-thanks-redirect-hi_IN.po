@@ -1,0 +1,176 @@
+# Copyright (C) 2021 Nitin Prakash
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Thanks Redirect for WooCommerce 3.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-thanks-"
+"redirect\n"
+"Last-Translator: \n"
+"Language-Team: Hindi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-06-17T13:41:01+02:00\n"
+"PO-Revision-Date: 2021-06-17 12:15+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: wc-thanks-redirect\n"
+"Language: hi_IN\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Loco-Version: 2.5.2; wp-5.7.2"
+
+#: wc-thanks-redirect.php:375
+msgid "Date"
+msgstr "तारीख"
+
+#: wc-thanks-redirect.php:325
+msgid "Donate"
+msgstr "उपहार देना"
+
+#: wc-thanks-redirect.php:139
+msgid "Enable Global Thanks Redirect"
+msgstr "वैश्विक धन्यवाद पुनर्निर्देशन सक्षम करें"
+
+#: wc-thanks-redirect.php:149 wc-thanks-redirect.php:159
+msgid "Enter Valid URL!"
+msgstr "मान्य यूआरएल दर्ज करें!"
+
+#: wc-thanks-redirect.php:267 wc-thanks-redirect.php:278
+msgid "Enter Valid URL."
+msgstr "मान्य यूआरएल दर्ज करें!"
+
+#: wc-thanks-redirect.php:275
+msgid "Failure Redirect"
+msgstr "विफलता रीडायरेक्ट"
+
+#: wc-thanks-redirect.php:134
+msgid "Global Redirect Settings"
+msgstr "वैश्विक रीडायरेक्ट सेटिंग्स"
+
+#: wc-thanks-redirect.php:324
+msgid "Go PRO!"
+msgstr "पेशेवर बनो!"
+
+#. Author URI of the plugin
+msgid "http://www.nitin247.com/"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://nitin247.com/plugin/wc-thanks-redirect/"
+msgstr ""
+
+#: wc-thanks-redirect.php:379
+msgid "Name"
+msgstr "नाम"
+
+#. Author of the plugin
+msgid "Nitin Prakash"
+msgstr "नितिन प्रकाश"
+
+#: wc-thanks-redirect.php:435
+msgid "Note"
+msgstr "नोट"
+
+#: wc-thanks-redirect.php:387
+msgid "Order details"
+msgstr "ऑर्डर का विवरण"
+
+#: wc-thanks-redirect.php:155
+msgid "Order Failure Redirect URL"
+msgstr "आदेश विफलता रीडायरेक्ट URL"
+
+#: wc-thanks-redirect.php:371
+msgid "Order number"
+msgstr "क्रम संख्या"
+
+#: wc-thanks-redirect.php:365
+msgid "Order received"
+msgstr "आदेश प्राप्त"
+
+#: wc-thanks-redirect.php:383
+msgid "Payment Method"
+msgstr "भुगतान का तरीका"
+
+#: wc-thanks-redirect.php:326
+msgid "Plugin Support"
+msgstr "प्लगइन समर्थन"
+
+#: wc-thanks-redirect.php:393
+msgid "Product"
+msgstr "उत्पाद"
+
+#: wc-thanks-redirect.php:323
+msgid "Settings"
+msgstr "समायोजन"
+
+#: wc-thanks-redirect.php:264
+msgid "Thank You URL"
+msgstr "धन्यवाद यूआरएल"
+
+#: wc-thanks-redirect.php:106
+msgid "Thanks Redirect "
+msgstr "धन्यवाद रीडायरेक्ट"
+
+#. Plugin Name of the plugin
+msgid "Thanks Redirect for WooCommerce"
+msgstr "WooCommerce के लिए धन्यवाद रीडायरेक्ट"
+
+#. Description of the plugin
+msgid ""
+"Thanks Redirect for WooCommerce allows adding Thank You Page or Thank You "
+"URL for WooCommerce Products for your Customers, now supports Order Details "
+"on Thank You Page.This plugin does not support Multisite."
+msgstr ""
+"WooCommerce के लिए धन्यवाद पुनर्निर्देशन आपके ग्राहकों के लिए WooCommerce "
+"उत्पादों के लिए धन्यवाद पृष्ठ या धन्यवाद URL जोड़ने की अनुमति देता है, अब "
+"धन्यवाद पृष्ठ पर आदेश विवरण का समर्थन करता है। यह प्लगइन मल्टीसाइट का समर्थन "
+"नहीं करता है।"
+
+#: wc-thanks-redirect.php:317
+msgid ""
+"Thanks Redirect for WooCommerce is not designed for Multisite, you may need "
+"to buy this short plugin. <a target=\"_blank\" href=\"https://bit."
+"ly/2RwaIQB\">Thanks Redirect for WooCommerce PRO</a>!"
+msgstr ""
+"WooCommerce के लिए धन्यवाद रीडायरेक्ट मल्टीसाइट के लिए डिज़ाइन नहीं किया गया "
+"है, आपको यह छोटा प्लगइन खरीदने की आवश्यकता हो सकती है। <a target=\"_blank\" "
+"href=\"https://bit.ly/2RwaIQB\">WooCommerce PRO के लिए धन्यवाद रीडायरेक्ट</a>"
+"!"
+
+#: wc-thanks-redirect.php:311
+msgid ""
+"Thanks Redirect for WooCommerce requires active WooCommerce Installation, "
+"please install and activate WooCommerce plugin!"
+msgstr ""
+"WooCommerce के लिए धन्यवाद पुनर्निर्देशन के लिए सक्रिय WooCommerce स्थापना "
+"की आवश्यकता है, कृपया WooCommerce प्लगइन स्थापित और सक्रिय करें!"
+
+#: wc-thanks-redirect.php:129
+msgid "Thanks Redirect Settings"
+msgstr "धन्यवाद रीडायरेक्ट सेटिंग्स"
+
+#: wc-thanks-redirect.php:145
+msgid "Thanks Redirect URL"
+msgstr "धन्यवाद रीडायरेक्ट यूआरएल"
+
+#: wc-thanks-redirect.php:129
+msgid ""
+"The following options are used to configure Thanks Redirect for WooCommerce"
+msgstr ""
+"WooCommerce के लिए धन्यवाद पुनर्निर्देशन को कॉन्फ़िगर करने के लिए निम्नलिखित "
+"विकल्पों का उपयोग किया जाता है"
+
+#: wc-thanks-redirect.php:156
+msgid "This will add a redirect URL for failed orders"
+msgstr "यह विफल आदेशों के लिए एक रीडायरेक्ट URL जोड़ देगा"
+
+#: wc-thanks-redirect.php:146
+msgid "This will add a redirect URL for successful orders"
+msgstr "यह सफल आदेशों के लिए एक रीडायरेक्ट URL जोड़ देगा"
+
+#: wc-thanks-redirect.php:135
+msgid "This will add redirect for orders"
+msgstr "यह ऑर्डर के लिए रीडायरेक्ट जोड़ देगा"
+
+#: wc-thanks-redirect.php:394
+msgid "Total"
+msgstr "समवायी"
