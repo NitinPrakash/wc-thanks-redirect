@@ -5,7 +5,7 @@ Author: Nitin Prakash
 Donate link: https://nitin247.com/buy-me-a-coffee/
 Tags: thank you page,woocommerce thank you page, thanks redirect, thank you redirect, woocommerce thanks redirect, woocommerce thank you redirect
 Requires at least: 4.0
-Tested up to: 5.7
+Tested up to: 5.8
 Stable tag: 4.5
 Version: 3.0
 Requires PHP: 5.6
@@ -41,7 +41,11 @@ This plugin is open for new feature request. Just create a request in plugin sup
 
 5- Order Details on Thank You page. ( New Feature Update )
 
-6- Language Translations through POT, PO files.
+6- Supports Multiple Products in Cart
+
+7- Supports Downloadable Products, downloadable product details on Thank You Page.
+
+8- Language Translations through POT, PO files.
 
 **PRO Features**
 
@@ -55,7 +59,7 @@ Check PRO Version for Wordpress Multisite here <a href="https://bit.ly/2RxRkT5">
 
 **Credits**
 
-- German Translation by <a target="_blank" href="https://wordpress.org/support/users/danielglaas/">Daniel Glass</a>
+- German Translation by <a target="_blank" href="https://wordpress.org/support/users/danielglaas/">Daniel Glaas</a>
 
 
 **Want to contribute to the plugin?**
@@ -103,7 +107,8 @@ Yes, pot file is available in languages. You may need to add translation file in
 1. Global Redirect
 2. Per Product Redirect
 3. How to add shortcode for Order Details
-4. Order details on Thank You page
+4. Order details on Thank You Page
+5. Order details on Thank You Page for downloadable products
 
 == Changelog ==
 

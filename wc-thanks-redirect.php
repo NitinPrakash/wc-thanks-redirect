@@ -18,13 +18,14 @@
  * Domain Path:       /languages/
  * Requires PHP:      5.6
  * WC requires at least: 4.0.0
- * WC tested up to: 5.4
+ * WC tested up to: 5.6
  */
 
 // Exit if accessed directly
 defined( 'ABSPATH' ) || die( 'Wordpress Error! Opening plugin file directly' );
 
 define( 'WOOCOMMERCE_THANKS_REDIRECT_PLUGIN_PATH', plugins_url( __FILE__ ) );
+define( 'WOOCOMMERCE_THANKS_REDIRECT_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'WOOCOMMERCE_THANKS_REDIRECT_PLUGIN_VERSION', '3.0' ); 
 
 if ( ! function_exists( 'wc_thanks_redirect_fs' ) ) {
@@ -94,6 +95,16 @@ if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', 
             'manage_woocommerce', // Required user capability
             'admin.php?page=wc-settings&tab=products&section=wctr'        
         );
+
+        add_submenu_page(
+            'woocommerce' // Use the parent slug as usual.
+            , __( 'Documentation', 'wc-thanks-redirect' )
+            , ''
+            , 'manage_woocommerce'
+            , 'wctr-docs'
+            , 'wc_thanks_redirect_wctr_docs'
+        );
+
     }
     
     /**
@@ -125,8 +136,12 @@ if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', 
                    $settings_url = array();
                    
                    // Add Title to the Settings
-                   
-                   $settings_url[] = array( 'name' => __( 'Thanks Redirect Settings', 'wc-thanks-redirect' ), 'type' => 'title', 'desc' => __( 'The following options are used to configure Thanks Redirect for WooCommerce', 'wc-thanks-redirect' ), 'id' => 'wctr' );
+                   $settings_url[] = array(
+                        'name' => __( 'Thanks Redirect Settings', 'wc-thanks-redirect-pro'),
+                        'type' => 'title',
+                        'desc' => __( 'You can check <a href="?page=wctr-docs">Plugin Documentation</a> here.<br/>The following options are used to configure WC Thanks Redirect PRO', 'wc-thanks-redirect-pro'),
+                        'id'   => 'wctr',
+                    );
                    
                    // Add first checkbox option
                    
@@ -323,6 +338,8 @@ function wc_thanks_redirect_action_links( $links ) {
 	'<a href="' . esc_url( site_url().'/wp-admin/admin.php?page=wc-settings&tab=products&section=wctr' ) . '">' . __( 'Settings', 'wc-thanks-redirect' ) . '</a>',
     '<a target="_blank" style="color:green;font-weight:bold;" href="' . esc_url( 'https://bit.ly/2RwaIQB' ) . '">' . __( 'Go PRO!', 'wc-thanks-redirect' ) . '</a>',
     '<a target="_blank" href="' . esc_url( 'https://nitin247.com/buy-me-a-coffe' ) . '">' . __( 'Donate', 'wc-thanks-redirect' ) . '</a>',
+    '<a href="' . esc_url( site_url().'/wp-admin/admin.php?page=wctr-docs' ) . '">' . __( 'Documentation', 'wc-thanks-redirect-pro'
+ ) . '</a>',
     '<a target="_blank" href="' . esc_url( 'https://nitin247.com/support/' ) . '">' . __( 'Plugin Support', 'wc-thanks-redirect' ) . '</a>',
 	), $links );
 	return $links;
@@ -462,4 +479,37 @@ function wc_thanks_redirect_short_code_order_details( $atts ) {
     $shortcode_output = ob_get_clean();
     return $shortcode_output;
     
+}
+
+function wc_thanks_redirect_wctr_docs(){
+
+    //Get the active tab from the $_GET param
+  $default_tab = 'docs';
+  $tab = isset($_GET['tab']) ? $_GET['tab'] : $default_tab;
+
+  ?>
+
+<div class="wrap">    
+    <!-- Here are our tabs -->
+    <nav class="nav-tab-wrapper">
+      <a href="<?php echo site_url().'/wp-admin/admin.php?page=wc-settings&tab=products&section=wctr';?>" class="nav-tab <?php if($tab===null):?>nav-tab-active<?php endif; ?>">
+            <?php echo __( 'Thank You Page Settings', 'wc-thanks-redirect-pro');?>
+      </a>
+
+      <a href="?page=wctr-docs&tab=docs" class="nav-tab <?php if($tab==='docs'):?>nav-tab-active<?php endif; ?>">
+            <?php echo __( 'Documentation', 'wc-thanks-redirect-pro');?>
+      </a>
+
+    </nav>  
+
+    <div class="tab-content">
+
+        <?php if( $tab == 'docs' ) {                      
+            include_once( WOOCOMMERCE_THANKS_REDIRECT_PLUGIN_DIR_PATH.'readme.html' );           
+        } ?>
+    
+    </div>
+  </div>  
+
+    <?php
 }
