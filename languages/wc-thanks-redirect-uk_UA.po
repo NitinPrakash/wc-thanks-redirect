@@ -1,0 +1,145 @@
+# Copyright (C) 2021 Nitin Prakash
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Thanks Redirect for WooCommerce 3.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-thanks-redirect\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-06-17T14:13:15+02:00\n"
+"PO-Revision-Date: 2021-10-21 18:40+0300\n"
+"X-Generator: Poedit 3.0\n"
+"X-Domain: wc-thanks-redirect\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: uk_UA\n"
+
+#. Plugin Name of the plugin
+msgid "Thanks Redirect for WooCommerce"
+msgstr "Thanks Redirect for WooCommerce"
+
+#. Plugin URI of the plugin
+msgid "https://nitin247.com/plugin/wc-thanks-redirect/"
+msgstr "https://nitin247.com/plugin/wc-thanks-redirect/"
+
+#. Description of the plugin
+msgid "Thanks Redirect for WooCommerce дозволяє додавати сторінку подяки або URL-адресу подяки для продуктів WooCommerce для ваших клієнтів, тепер підтримує інформацію про замовлення на сторінці подяки. Цей плагін не підтримує багатосайтність."
+msgstr "Thanks Redirect for WooCommerce дозволяє додавати сторінку подяки або URL-адресу подяки для продуктів WooCommerce для ваших клієнтів, тепер підтримує інформацію про замовлення на сторінці подяки. Цей плагін не підтримує багатосайтність."
+
+#. Author of the plugin
+msgid "Nitin Prakash"
+msgstr "Nitin Prakash"
+
+#. Author URI of the plugin
+msgid "http://www.nitin247.com/"
+msgstr "http://www.nitin247.com/"
+
+#: wc-thanks-redirect.php:106
+msgid "Thanks Redirect "
+msgstr "Thanks Redirect "
+
+#: wc-thanks-redirect.php:129
+msgid "Налаштування Thanks Redirect"
+msgstr "Налаштування Thanks Redirect"
+
+#: wc-thanks-redirect.php:129
+msgid "Наведені нижче параметри використовуються для налаштування Thanks Redirect for WooCommerce"
+msgstr "Наведені нижче параметри використовуються для налаштування Thanks Redirect for WooCommerce"
+
+#: wc-thanks-redirect.php:134
+msgid "Глобальні налаштування переадресації"
+msgstr "Глобальні налаштування переадресації"
+
+#: wc-thanks-redirect.php:135
+msgid "Це додасть перенаправлення для замовлень"
+msgstr "Це додасть перенаправлення для замовлень"
+
+#: wc-thanks-redirect.php:139
+msgid "Увімкнути глобальну переадресацію"
+msgstr "Увімкнути глобальну переадресацію"
+
+#: wc-thanks-redirect.php:146
+msgid "Це додасть URL-адресу переспрямування для успішних замовлень"
+msgstr "Це додасть URL-адресу переспрямування для успішних замовлень"
+
+#: wc-thanks-redirect.php:149 wc-thanks-redirect.php:159
+msgid "Введіть дійсну URL-адресу!"
+msgstr "Введіть дійсну URL-адресу!"
+
+#: wc-thanks-redirect.php:156
+msgid "Це додасть URL-адресу переспрямування для невдалих замовлень"
+msgstr "Це додасть URL-адресу переспрямування для невдалих замовлень"
+
+#: wc-thanks-redirect.php:264 wc-thanks-redirect.php:145
+msgid "Сторінка успішної оплати"
+msgstr "Сторінка успішної оплати"
+
+#: wc-thanks-redirect.php:267 wc-thanks-redirect.php:278
+msgid "Введіть дійсну URL-адресу."
+msgstr "Введіть дійсну URL-адресу."
+
+#: wc-thanks-redirect.php:275 wc-thanks-redirect.php:155
+msgid "Сторінка невдалої оплати"
+msgstr "Сторінка невдалої оплати"
+
+#: wc-thanks-redirect.php:311
+msgid "Thanks Redirect for WooCommerce вимагає активної інсталяції WooCommerce, будь ласка, встановіть та активуйте плагін WooCommerce!"
+msgstr "Thanks Redirect for WooCommerce вимагає активної інсталяції WooCommerce, будь ласка, встановіть та активуйте плагін WooCommerce!"
+
+#: wc-thanks-redirect.php:317
+msgid "Thanks Redirect for WooCommerce не підтримує багатосайтність, можливо, вам доведеться придбати цей короткий плагін. <a target=\"_blank\" href=\"https://bit.ly/2RwaIQB\">Thanks Redirect for WooCommerce PRO</a>!"
+msgstr "Thanks Redirect for WooCommerce не підтримує багатосайтність, можливо, вам доведеться придбати цей короткий плагін. <a target=\"_blank\" href=\"https://bit.ly/2RwaIQB\">Thanks Redirect for WooCommerce PRO</a>!"
+
+#: wc-thanks-redirect.php:323
+msgid "Налаштування"
+msgstr "Налаштування"
+
+#: wc-thanks-redirect.php:324
+msgid "Переходьте на PRO!"
+msgstr "Переходьте на PRO!"
+
+#: wc-thanks-redirect.php:325
+msgid "Пожертвувати"
+msgstr "Пожертвувати"
+
+#: wc-thanks-redirect.php:326
+msgid "Підтримка"
+msgstr "Підтримка"
+
+#: wc-thanks-redirect.php:365
+msgid "Замовлення отримано"
+msgstr "Замовлення отримано"
+
+#: wc-thanks-redirect.php:371
+msgid "Номер замовлення"
+msgstr "Номер замовлення"
+
+#: wc-thanks-redirect.php:375
+msgid "Дата"
+msgstr "Дата"
+
+#: wc-thanks-redirect.php:379
+msgid "Ім'я"
+msgstr "Ім'я"
+
+#: wc-thanks-redirect.php:383
+msgid "Спосіб оплати"
+msgstr "Спосіб оплати"
+
+#: wc-thanks-redirect.php:387
+msgid "Деталі замовлення"
+msgstr "Деталі замовлення"
+
+#: wc-thanks-redirect.php:393
+msgid "Товар"
+msgstr "Товар"
+
+#: wc-thanks-redirect.php:394
+msgid "Разом"
+msgstr "Разом"
+
+#: wc-thanks-redirect.php:435
+msgid "Примітка"
+msgstr "Примітка"

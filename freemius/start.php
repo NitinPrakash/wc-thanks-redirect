@@ -15,7 +15,7 @@
 	 *
 	 * @var string
 	 */
-	$this_sdk_version = '2.4.1';
+	$this_sdk_version = '2.6.2';
 
 	#region SDK Selection Logic --------------------------------------------------------------------
 
@@ -46,6 +46,34 @@
 	 */
 	$file_path    = fs_normalize_path( __FILE__ );
 	$fs_root_path = dirname( $file_path );
+
+    // @todo: Remove this code after a few months when WP 6.3 usage is low enough.
+    global $wp_version;
+
+    if (
+        ! function_exists( 'wp_get_current_user' ) &&
+        /**
+         * `get_stylesheet()` will rely on `wp_get_current_user()` when it is being filtered by `theme-previews.php`. That happens only when the site editor is loaded or when the site editor is sending REST requests.
+         * @see theme-previews.php:wp_get_theme_preview_path()
+         *
+         * @todo This behavior is already fixed in the core (WP 6.3.2+), and this code can be removed after a few months when WP 6.3 usage is low enough.
+         * @since WP 6.3.0
+         */
+        version_compare( $wp_version, '6.3', '>=' ) &&
+        version_compare( $wp_version, '6.3.1', '<=' ) &&
+        (
+            'site-editor.php' === basename( $_SERVER['SCRIPT_FILENAME'] ) ||
+            (
+                function_exists( 'wp_is_json_request' ) &&
+                wp_is_json_request() &&
+                ! empty( $_GET['wp_theme_preview'] )
+            )
+        )
+    ) {
+        // Requiring this file since the call to get_stylesheet() below can trigger a call to wp_get_current_user() when previewing a theme.
+        require_once ABSPATH . 'wp-includes/pluggable.php';
+    }
+
     /**
      * Get the themes directory where the active theme is located (not passing the stylesheet will make WordPress
      * assume that the themes directory is inside `wp-content`.
@@ -68,7 +96,11 @@
 
 	if ( ! isset( $fs_active_plugins ) ) {
 		// Load all Freemius powered active plugins.
-		$fs_active_plugins = get_option( 'fs_active_plugins', new stdClass() );
+		$fs_active_plugins = get_option( 'fs_active_plugins' );
+
+        if ( ! is_object( $fs_active_plugins ) ) {
+            $fs_active_plugins = new stdClass();
+        }
 
 		if ( ! isset( $fs_active_plugins->plugins ) ) {
 			$fs_active_plugins->plugins = array();
@@ -512,7 +544,7 @@
 		}
 
 		/**
-		 * @param array <string,string> $module Plugin or Theme details.
+		 * @param array <string,string|bool|array> $module Plugin or Theme details.
 		 *
 		 * @return Freemius
 		 * @throws Freemius_Exception
