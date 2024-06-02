@@ -10,7 +10,7 @@
  * Plugin Name:       Thank You Page for WooCommerce
  * Plugin URI:        https://nitin247.com/plugin/wc-thanks-redirect/
  * Description:       Thank You Page for WooCommerce allows adding Thank You Page or Thank You URL for WooCommerce Products for your Customers, now supports Order Details on Thank You Page. This plugin does not support Multisite.
- * Version:           4.1.2
+ * Version:           4.1.3
  * Author:            Nitin Prakash
  * Author URI:        http://www.nitin247.com/
  * License:           GPL-2.0+
@@ -19,7 +19,7 @@
  * Domain Path:       /languages/
  * Requires PHP:      7.4
  * WC requires at least: 8.0
- * WC tested up to: 8.7
+ * WC tested up to: 8.9
  */
 
 // Exit if accessed directly
@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || die( 'WordPress Error! Opening plugin file directly' );
 
 define( 'WOOCOMMERCE_THANKS_REDIRECT_PLUGIN_PATH', plugins_url( __FILE__ ) );
 define( 'WOOCOMMERCE_THANKS_REDIRECT_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
-define( 'WOOCOMMERCE_THANKS_REDIRECT_PLUGIN_VERSION', '4.1.2' );
+define( 'WOOCOMMERCE_THANKS_REDIRECT_PLUGIN_VERSION', '4.1.3' );
 
 if ( ! function_exists( 'wc_thanks_redirect_fs' ) ) {
 	// Create a helper function for easy SDK access.
@@ -94,12 +94,7 @@ function wc_thanks_redirect_custom_thank_you() {
 		return;
 	}
 
-	global $wp;
-
-	$current_url = home_url( add_query_arg( array(), $wp->request ) );
-	$parsed_url  = wp_parse_url( $current_url );
-
-	$order_id = array_pop( explode( '/', $parsed_url['path'] ) );
+	$order_id = wc_thanks_redirect_pro_get_order_id();
 	wc_thanks_redirect_safe_redirect( $order_id );
 
 }
@@ -139,6 +134,7 @@ if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins',
 	 */
 
 	add_filter( 'woocommerce_get_sections_products', 'wc_thanks_redirect_add_section' );
+
 	function wc_thanks_redirect_add_section( $sections ) {
 		$sections['wctr'] = __( 'Thank You Page', 'wc-thanks-redirect' );
 		return $sections;
@@ -165,9 +161,9 @@ if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins',
 
 			// Add Title to the Settings
 			$settings_url[] = array(
-				'name' => __( 'Thank You Page Settings', 'wc-thanks-redirect-pro' ),
+				'name' => __( 'Thank You Page Settings', 'wc-thanks-redirect' ),
 				'type' => 'title',
-				'desc' => __( 'The following options are used to configure Thank You Page', 'wc-thanks-redirect-pro' ),
+				'desc' => __( 'The following options are used to configure Thank You Page', 'wc-thanks-redirect' ),
 				'id'   => 'wctr',
 			);
 
@@ -426,6 +422,7 @@ add_action( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'wc_thanks_red
 /* Add Plugin shortcode */
 
 add_shortcode( 'TRFW_ORDER_DETAILS', 'wc_thanks_redirect_short_code_order_details' );
+
 function wc_thanks_redirect_short_code_order_details() {
 
 	$order_key = ! empty( $_GET['order_key'] ) ? wp_kses_post( $_GET['order_key'] ) : 0; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
@@ -555,5 +552,26 @@ function wc_thanks_redirect_short_code_order_details() {
 
 	$shortcode_output = ob_get_clean();
 	return $shortcode_output;
+}
+
+/* Get Order ID from request */
+function wc_thanks_redirect_pro_get_order_id() {
+	global $wp;
+
+	$order_id = 0;
+
+	if ( isset( $_GET['key'] ) && ! empty( $_GET['key'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$order_key = ! empty( $_GET['key'] ) ? sanitize_text_field( $_GET['key'] ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$order_id  = wc_get_order_id_by_order_key( $order_key );
+	} elseif ( isset( $_GET['order_key'] ) && ! empty( $_GET['order_key'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$order_key = ! empty( $_GET['order_key'] ) ? sanitize_text_field( $_GET['order_key'] ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$order_id  = wc_get_order_id_by_order_key( $order_key );
+	} else {
+		$current_url = home_url( add_query_arg( array(), $wp->request ) );
+		$parsed_url  = wp_parse_url( $current_url );
+		$order_id    = array_pop( explode( '/', $parsed_url['path'] ) );
+	}
+
+	return $order_id;
 }
 

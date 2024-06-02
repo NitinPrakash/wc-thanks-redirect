@@ -3,11 +3,11 @@ Contributors: nitin247
 Author URI: http://www.nitin247.com/
 Author: Nitin Prakash
 Donate link: https://nitin247.com/buy-me-a-coffee/
-Tags: thank you page,thank you page woocommerce,woocommerce thank you page, woocommerce thanks redirect, woocommerce thank you redirect
+Tags: thank you page,woocommerce thank you,woocommerce thank you page, custom thank you page, woo thank you page
 Requires at least: 6.0
 Tested up to: 6.5
-Stable tag: 4.1.2
-Version: 4.1.2
+Stable tag: 4.1.3
+Version: 4.1.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -79,7 +79,7 @@ This plugin is open for new feature request. Just create a request in plugin sup
 In the “Thank You URL” field in the product? put like this https://site.com/thanks?client_email=[billing_email]
 
 Unlock the Power of WooCommerce: Learn How to Create a Captivating Thank You Page Today!
-<a href="https://nitin247.com/how-to-create-woocommerce-thank-you-page/" class="cta-button">
+<a href="https://nitin247.com/how-to-create-woocommerce-thank-you-page/?utm_source=wctr-lite&utm_campaign=wp-repo&utm_medium=readme&utm_term=WCTR" class="cta-button">
   Discover How to Create a WooCommerce Thank You Page
 </a>
 
@@ -195,7 +195,10 @@ Vulnerability Fix. Replaced order_id with order_key for order details security.
 Upgrade URL updated.
 ** V 4.1.2 **
 SDK Update.
+** V 4.1.3 **
+FIX Order id in multilanguage.
+
 == Upgrade Notice ==
 
-= 4.1.2 = 
-SDK Update.
+= 4.1.3 = 
+FIX Order id in multilanguage..
