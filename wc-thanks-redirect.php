@@ -10,7 +10,7 @@
  * Plugin Name:       Thank You Page for WooCommerce
  * Plugin URI:        https://nitin247.com/plugin/wc-thanks-redirect/
  * Description:       Thank You Page for WooCommerce allows adding Thank You Page or Thank You URL for WooCommerce Products for your Customers, now supports Order Details on Thank You Page. This plugin does not support Multisite.
- * Version:           4.1.3
+ * Version:           4.1.4
  * Author:            Nitin Prakash
  * Author URI:        http://www.nitin247.com/
  * License:           GPL-2.0+
@@ -19,7 +19,7 @@
  * Domain Path:       /languages/
  * Requires PHP:      7.4
  * WC requires at least: 8.0
- * WC tested up to: 8.9
+ * WC tested up to: 9.1
  */
 
 // Exit if accessed directly
@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || die( 'WordPress Error! Opening plugin file directly' );
 
 define( 'WOOCOMMERCE_THANKS_REDIRECT_PLUGIN_PATH', plugins_url( __FILE__ ) );
 define( 'WOOCOMMERCE_THANKS_REDIRECT_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
-define( 'WOOCOMMERCE_THANKS_REDIRECT_PLUGIN_VERSION', '4.1.3' );
+define( 'WOOCOMMERCE_THANKS_REDIRECT_PLUGIN_VERSION', '4.1.4' );
 
 if ( ! function_exists( 'wc_thanks_redirect_fs' ) ) {
 	// Create a helper function for easy SDK access.
@@ -67,37 +67,6 @@ if ( ! function_exists( 'wc_thanks_redirect_fs' ) ) {
 /**
  * Check if WooCommerce is active
  */
-
-add_action(
-	'before_woocommerce_init',
-	function() {
-		if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
-			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
-			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'analytics', __FILE__, true );
-			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'new_navigation', __FILE__, true );
-			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'cart_checkout_blocks', __FILE__, true );
-		}
-	}
-);
-
-$skip_template_redirect = get_option( 'wctr_thanks_redirect_enable_template_redirect', true );
-$skip_template_redirect = filter_var( $skip_template_redirect, FILTER_VALIDATE_BOOLEAN );
-
-if ( true === $skip_template_redirect ) {
-	add_action( 'template_redirect', 'wc_thanks_redirect_custom_thank_you' );
-}
-
-function wc_thanks_redirect_custom_thank_you() {
-
-	// do nothing if we are not on the order received page
-	if ( ! is_wc_endpoint_url( 'order-received' ) || empty( $_GET['key'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		return;
-	}
-
-	$order_id = wc_thanks_redirect_pro_get_order_id();
-	wc_thanks_redirect_safe_redirect( $order_id );
-
-}
 
 if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ), true ) ) {
 	if ( is_multisite() ) {
@@ -392,6 +361,37 @@ if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins',
 	}
 }
 
+add_action(
+	'before_woocommerce_init',
+	function() {
+		if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'analytics', __FILE__, true );
+			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'new_navigation', __FILE__, true );
+			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'cart_checkout_blocks', __FILE__, true );
+		}
+	}
+);
+
+$skip_template_redirect = get_option( 'wctr_thanks_redirect_enable_template_redirect', true );
+$skip_template_redirect = filter_var( $skip_template_redirect, FILTER_VALIDATE_BOOLEAN );
+
+if ( true === $skip_template_redirect ) {
+	add_action( 'template_redirect', 'wc_thanks_redirect_custom_thank_you' );
+}
+
+function wc_thanks_redirect_custom_thank_you() {
+
+	// do nothing if we are not on the order received page
+	if ( ! is_wc_endpoint_url( 'order-received' ) || empty( $_GET['key'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		return;
+	}
+
+	$order_id = wc_thanks_redirect_pro_get_order_id();
+	wc_thanks_redirect_safe_redirect( $order_id );
+
+}
+
 /* Admin notice if WooCommerce is not installed or active */
 
 function wc_thanks_redirect_install_admin_notice() {
@@ -417,6 +417,7 @@ function wc_thanks_redirect_action_links( $links ) {
 	);
 	return $links;
 }
+
 add_action( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'wc_thanks_redirect_action_links' );
 
 /* Add Plugin shortcode */
